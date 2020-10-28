@@ -1,0 +1,2 @@
+Nombre: {{ $name }}
+Email: {{ $email }}
