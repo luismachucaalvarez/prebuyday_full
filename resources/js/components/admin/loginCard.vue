@@ -32,22 +32,27 @@ name: "login",
             password: '',
             loginError: false,
             errors: {},
+            url: ''
             //isProgress: false
         }
     },
     methods: {
         login(){
             this.loginError = false;
-            axios.post('http://localhost:8000/api/auth/login', {
+            this.url = this.$router.history._startLocation
+            axios.post('https://preinscripcion.buyday.cl/api/auth/login', {
+            //axios.post('http://localhost:8000/api/auth/login', {
                 email: this.email,
                 password: this.password
             }).then(response => {
                 store.commit('loginUser')
                 localStorage.setItem('token', response.data.access_token)
-                this.$router.push({name: 'dashboardInicio'})
-
-                //this.isProgress = true;
-                //if(response.data.su)
+                console.log(this.url)
+                if (this.url == '/login'){
+                    this.$router.push({name: 'dashboardInicio'})
+                } else {
+                    this.$router.push({path: this.url})
+                }
             })
             .catch(error =>{
                 //console.log(error)

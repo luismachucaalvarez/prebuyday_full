@@ -60,7 +60,7 @@
                     <div class="w-full md:w-1/2 py-2 px-3 md:mb-0">
                         <label class="block uppercase tracking-wide text-black text-xs font-bold mb-1" >
                              Si realizaste iniciación de actividades, activa esta opción (Si no lo has hecho, no te preocupes ;))
-                        </label>
+                        </label >
                         <div class="form-switch inline-block align-middle">
                             <input v-on:click="chequeoIniciacion" type="checkbox" v-model="contacto.iniciacion_realizada" id="interruptor_iniciacion_realizada" class="form-switch-checkbox" />
                             <label class="form-switch-label" for="interruptor_iniciacion_realizada"></label>
@@ -89,7 +89,6 @@
                         </ValidationProvider>
                     </div>
                 </div>
-
                 <div id="div-cargo-contacto" class="flex flex-wrap -mx-3 hidden">
                     <div class="w-full py-2 px-3 md:mb-0">
                         <label class="block uppercase tracking-wide text-black text-xs font-bold mb-1" for="cargo_contacto">
@@ -114,21 +113,36 @@
 
                     </div>
                 </div>
+                <div class="hidden">
+                    <div class="">
+                        <label for="validarusuario">
+                        No deberías completar esto... a menos que seas un dinosaurio ;)
+                        </label>
+                        <input type="text" name="validarusuario">
+
+
+                    </div>
+                </div>
                 <div class="flex flex-wrap -mx-3">
                     <div class="w-full py-2 px-3 md:mb-0 text-sm">
-                        <p>Desde Buyday.cl nos comprometemos con lo siguiente, según la ley n° 19.628:</p>
-                        <ul>
-                            <li class="list-disc">Te contactaremos solo para fines comerciales.</li>
-                            <li class="list-disc">No venderemos tu información a terceros ni te enviaremos spam.</li>
-                            <li class="list-disc">Te borraremos de la base de datos cuando lo estimes necesario o en el plazo establecido por ley.</li>
-                        </ul>
+                        <label class="block uppercase tracking-wide text-black text-xs font-bold mb-1" for="tratamiento-datos">
+                            Tratamiento de datos<span class="obligatorio">*</span>
+                        </label>
+                        <div class="bg-lightpink rounded px-4 py-6">
+                            <p class="text-sm py-2">Desde Buyday.cl nos comprometemos con lo siguiente, según la ley n° 19.628:</p>
+                            <ul>
+                                <li class="list-disc">Te contactaremos solo para fines comerciales.</li>
+                                <li class="list-disc">No venderemos tu información a terceros ni te enviaremos spam.</li>
+                                <li class="list-disc">Te borraremos de la base de datos cuando lo estimes necesario o en el plazo establecido por ley.</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
                 <div class="flex flex-wrap -mx-3">
                     <div class="w-full py-2 px-3 md:mb-0">
-                        <label class="inline-flex items-center mt-3">
+                        <label class="inline-flex items-center mt-3 text-sm">
                             <ValidationProvider :rules="{ required: { allowFalse: false }}" v-slot="{errors}">
-                                <input type="checkbox" v-model="contacto.terminos" class="form-checkbox h-5 w-5 text-violet"><span class="ml-2 text-violet">Declaro haber leido y aceptado las condiciones indicadas anteriormente, y que los datos ingresados son fidedignos.</span>
+                                <input type="checkbox" v-model="contacto.terminos" class="form-checkbox h-4 w-4 text-violet"><span class="ml-2 text-violet">Declaro haber leido y aceptado las condiciones indicadas anteriormente, y que los datos ingresados son fidedignos.</span>
                                 <span>{{ errors[0] }}</span>
                             </ValidationProvider>
                         </label>
@@ -151,19 +165,11 @@
 //import Multiselect from 'vue-multiselect';
 import Multiselect from 'vue-multiselect/src/Multiselect'
 import VModal from 'vue-js-modal';
-//import ModalAgradecimiento from "./ModalAgradecimiento";
-//import Loading from 'vue-loading-overlay';
-//import 'vue-loading-overlay/dist/vue-loading.css';
-//import { rutValidator, rutFilter, rutInputDirective } from 'vue-dni';
-//import ModalAgradecimiento from './ModalAgradecimiento';
-
 
 export default {
     components:{
         Multiselect,
         VModal
-        //Loading,
-        //ModalAgradecimiento
     },
     "compilerOptions":{
       "resolveJsonModule": true,
@@ -181,6 +187,7 @@ export default {
                 nombre_fantasia_comercio: [],
                 cargo: [],
                 iniciacion_realizada:false,
+                validarusuario: '',
                 categorias: [],
                 terminos: ''
             },
@@ -205,18 +212,30 @@ export default {
     },
     methods:{
         ejecutarFormulario(){
-            let loader = this.$loading.show({
+            //this.validarusuario = document.getElementById('validarusaurio');
+            let validarusuario = document.querySelector("input[name=validarusuario]").value;
+            //console.log(validarusuario);
+            if(validarusuario == "" || this.validarusuario == null){
+                let loader = this.$loading.show({
                 loader: 'dots'
             });
             setTimeout(() => {
                 loader.hide()
+
             }, 6000)
-            this.enviarCorreo();
             this.crearContacto();
+            //this.enviarCorreo();
+            } else {
+                console.log('Skynet, ¿eres tú...?')
+            }
+
+
+
         },
         mostrarCargos(){
           var self = this;
-          axios.get('http://localhost:8000/api/cargos')
+          //axios.get('https://preinscripcion.buyday.cl/api/cargos')
+          axios.get(`https://preinscripcion.buyday.cl/api/cargos`)
             .then(response => {
                 self.cargo_options = response.data
             })
@@ -224,7 +243,7 @@ export default {
         },
         mostrarCategorias(){
             var self = this;
-            axios.get('http://localhost:8000/api/categorias')
+            axios.get('https://preinscripcion.buyday.cl/api/categorias')
                 .then(response => {
                     console.log(response.data)
                     self.categorias_options = response.data
@@ -233,7 +252,7 @@ export default {
         },
         crearContacto(){
 
-                this.axios.post('http://localhost:8000/api/nuevocontacto', this.contacto)
+                this.axios.post('https://preinscripcion.buyday.cl/api/nuevocontacto', this.contacto)
                     .then((response) => {
 
                         this.success = true;
@@ -254,10 +273,12 @@ export default {
                         console.log(error)
                     })
         },
-        enviarCorreo(){
-            this.axios.post('http://localhost:8000/api/enviarcorreo', this.contacto)
+        async enviarCorreo(){
+            await this.axios.post('https://preinscripcion.buyday.cl/api/enviarcorreo', this.contacto)
             .then((response) => {
-                console.log(response);
+                setTimeout(()=>{
+                    console.log(response);
+                }, 30000)
             }).catch((error)=>{
                 this.error = true;
                 console.log(error)

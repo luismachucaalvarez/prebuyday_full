@@ -103,7 +103,7 @@ export default {
     },
     methods:{
         async obtenerContactos(){
-            await axios.get('http://localhost:8000/api/contactos')
+            await axios.get('https://preinscripcion.buyday.cl/api/contactos')
                 .then(response =>{
                     //console.log(response.data.contactos.id)
                     this.rows = response.data.contactos
@@ -135,7 +135,7 @@ export default {
                 cancelButtonText: 'Cancelar',
         }).then((result) => {
             if (result.isConfirmed){
-                axios.delete(`http://localhost:8000/api/contactos/${id}`)
+                axios.delete(`https://preinscripcion.buyday.cl/api/contactos/${id}`)
                 .then((response) =>{
                     console.log('eliminado')
                 })
@@ -167,7 +167,7 @@ export default {
             this.$modal.hide('mensajeBorrado');
         }*/
         /*async eliminarContacto(id){
-            await axios.delete('http://localhost:8000/api/contactos')
+            await axios.delete('https://preinscripcion.buyday.cl/api/contactos')
             .then(response =>{
                 console.log('Borrado exitoso')
             }).catch( error =>{

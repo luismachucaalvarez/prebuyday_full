@@ -11,8 +11,7 @@ import store from '../store'
 
 export default {
     mode: 'history',
-    routes: [
-        {
+    routes: [{
             name: 'home',
             path: '/',
             component: Home
@@ -32,12 +31,14 @@ export default {
         {
             name: 'login',
             path: '/login',
-            component: () => import('../views/Login')
+            component: () =>
+                import ('../views/Login'),
         },
         {
             name: 'dashboardInicio',
             path: '/dashboard/inicio',
-            component: () => import('../views/Dashboard/Inicio'),
+            component: () =>
+                import ('../views/Dashboard/Inicio'),
             beforeEnter: (to, from, next) => {
                 // check if the route requires authentication and user is not logged in
                 if (!store.state.isLoggedIn) {
@@ -47,7 +48,7 @@ export default {
                 }
 
                 // if logged in redirect to dashboard
-                if(to.path === '/login' && store.state.isLoggedIn) {
+                if (to.path === '/login' && store.state.isLoggedIn) {
                     next({ name: 'dashboard' })
                     return
                 }
@@ -58,7 +59,8 @@ export default {
         {
             name: 'dashboardUsuarios',
             path: '/dashboard/usuarios',
-            component: () => import('../views/Dashboard/Usuarios'),
+            component: () =>
+                import ('../views/Dashboard/Usuarios'),
             beforeEnter: (to, from, next) => {
                 // check if the route requires authentication and user is not logged in
                 if (!store.state.isLoggedIn) {
@@ -68,7 +70,7 @@ export default {
                 }
 
                 // if logged in redirect to dashboard
-                if(to.path === '/login' && store.state.isLoggedIn) {
+                if (to.path === '/login' && store.state.isLoggedIn) {
                     next({ name: 'dashboard' })
                     return
                 }
@@ -79,18 +81,19 @@ export default {
         {
             name: 'dashboardContactos',
             path: '/dashboard/contactos',
-            component: () => import('../views/Dashboard/Contactos'),
+            component: () =>
+                import ('../views/Dashboard/Contactos'),
             beforeEnter: (to, from, next) => {
                 // check if the route requires authentication and user is not logged in
                 if (!store.state.isLoggedIn) {
                     // redirect to login page
-                    next({name: 'login'})
+                    next({ name: 'login' })
                     return
                 }
 
                 // if logged in redirect to dashboard
                 if (to.path === '/login' && store.state.isLoggedIn) {
-                    next({name: 'dashboard'})
+                    next({ name: 'dashboard' })
                     return
                 }
 
@@ -100,40 +103,43 @@ export default {
         {
             name: 'detalleContacto',
             path: '/dashboard/contactos/:id',
-            component: () => import('../views/Dashboard/DetalleContacto'),
+            component: () =>
+                import ('../views/Dashboard/DetalleContacto'),
             beforeEnter: (to, from, next) => {
                 // check if the route requires authentication and user is not logged in
                 if (!store.state.isLoggedIn) {
-                    // redirect to login page
-                    next({name: 'login'})
-                    return
-                }
+                    next({ path: '/login' })
+                        // redirect to login page
+                        //next({ path: '/login', redirect: '/dashboard/contactos' })
+
+                } else next()
 
                 // if logged in redirect to dashboard
-                if (to.path === '/login' && store.state.isLoggedIn) {
-                    next({name: 'dashboard'})
+                /*if (to.path === '/login' && store.state.isLoggedIn) {
+                    next({ name: 'dashboard' })
                     return
-                }
+                }*/
 
-                next()
+                //next()
             },
 
         },
         {
             name: 'emailContacto',
             path: '/dashboard/contactos/:id/email',
-            component: () => import('../views/Dashboard/EnviarCorreo'),
+            component: () =>
+                import ('../views/Dashboard/EnviarCorreo'),
             beforeEnter: (to, from, next) => {
                 // check if the route requires authentication and user is not logged in
                 if (!store.state.isLoggedIn) {
                     // redirect to login page
-                    next({name: 'login'})
+                    next({ name: 'login' })
                     return
                 }
 
                 // if logged in redirect to dashboard
                 if (to.path === '/login' && store.state.isLoggedIn) {
-                    next({name: 'dashboard'})
+                    next({ name: 'dashboard' })
                     return
                 }
 
@@ -145,15 +151,10 @@ export default {
         {
             path: '/logout',
             name: 'logout',
-            component: () => import('../views/Logout')
+            component: () =>
+                import ('../views/Logout')
         }
     ]
 
 
 }
-
-
-
-
-
-

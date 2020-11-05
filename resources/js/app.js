@@ -18,18 +18,19 @@ import 'sweetalert2/dist/sweetalert2.min.css';
 import VueScrollTo from 'vue-scrollto';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { far } from '@fortawesome/free-regular-svg-icons'
-import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome";
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import axios from 'axios';
 import VueGoodTablePlugin from 'vue-good-table';
 import { ValidationObserver } from "vee-validate";
 import { ValidationProvider, extend } from 'vee-validate/dist/vee-validate.full.esm';
 import KonamiCode from 'vue-konami-code';
-import {alpha_spaces, required, digits, email} from "vee-validate/dist/rules";
+import { alpha_spaces, required, digits, email } from "vee-validate/dist/rules";
 import { rutValidator, rutFilter, rutInputDirective } from 'vue-dni';
 import aos from 'aos';
 import 'aos/dist/aos.css'
 import 'vue-good-table/dist/vue-good-table.css'
 import Loading from 'vue-loading-overlay';
+import VueRecaptcha from 'vue-recaptcha';
 
 import 'vue-loading-overlay/dist/vue-loading.css';
 
@@ -41,9 +42,12 @@ Vue.use(VueScrollTo);
 library.add(far)
 
 Vue.use(VueGoodTablePlugin);
-Vue.use(KonamiCode, {callback: function () {
+Vue.use(VueRecaptcha);
+Vue.use(KonamiCode, {
+    callback: function() {
         alert('Snake? Snake!? Snaaaake!')
-    }});
+    }
+});
 Vue.directive('rut', rutInputDirective);
 
 extend("required", {
@@ -51,24 +55,24 @@ extend("required", {
     message: 'Por favor revisa este campo'
 });
 
-extend("alpha_spaces",{
+extend("alpha_spaces", {
     ...alpha_spaces,
     message: 'Solo se aceptan letras y espacios'
 });
 
-extend("digits",{
+extend("digits", {
     ...digits,
     message: 'Solo se aceptan digitos'
 });
 
-extend("telefono", value =>{
-    if (value.length == 9){
+extend("telefono", value => {
+    if (value.length == 9) {
         return true;
     }
-    return  'El número telefónico debe tener nueve dígitos'
+    return 'El número telefónico debe tener nueve dígitos'
 });
 
-extend("email",{
+extend("email", {
     ...email,
     message: 'Debes ingresar una dirección de correo válido'
 });
@@ -82,7 +86,8 @@ Vue.component("ValidationObserver", ValidationObserver);
 Vue.component('Navigation', require('./components/shared/Navigation').default);
 Vue.component('font-awesome-icon', FontAwesomeIcon);
 
-axios.defaults.baseURL = 'http://localhost:8000/api';
+//axios.defaults.baseURL = 'http://localhost:8000/api';
+axios.defaults.baseURL = 'https://127.0.0.1:8000/api';
 
 //Vue.config.productionTip = false
 
@@ -101,12 +106,10 @@ const app = new Vue({
             duration: 2000,
         })
     },
-    components:{
-      ValidationProvider,
+    components: {
+        ValidationProvider,
     },
     router: new VueRouter(routes),
     store,
     render: h => h(App),
 });
-
-

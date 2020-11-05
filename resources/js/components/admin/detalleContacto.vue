@@ -62,6 +62,7 @@ export default {
     methods:{
         obtenerDetalleContacto(){
             this.id = this.$route.params.id;
+            //axios.get(`https://preinscripcion.buyday.cl/api/contactos/${this.id}`)
             axios.get(`http://localhost:8000/api/contactos/${this.id}`)
             .then(response =>{
                 console.log(response.data)

@@ -6,7 +6,7 @@
     <meta name="csrf-token" value="{{ csrf_token() }}"/>
     <title>BuyDay.cl - Preinscripcion Tiendas</title>
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css2?family=Kanit&family=Staatliches&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit&family=Staatliches&family=Montserrat&display=swap" rel="stylesheet">
     <link href="{{ mix('css/app.css') }}" type="text/css" rel="stylesheet"/>
     <style>
         .bg-light {

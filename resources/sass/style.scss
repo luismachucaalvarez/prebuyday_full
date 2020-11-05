@@ -65,11 +65,16 @@
     background-image: url(../img/img_hero.jpg);
     padding-top: 4rem;
     padding-bottom: 4rem;
+
 }
 
 .captacion-pattern {
     background-image: url(../img/img_subhero.jpg)
 }
+
+/*.parrafo-hero{
+    background-color: black;
+}*/
 
 span.multiselect__tag{
     background-color: #a614fd;
@@ -88,9 +93,6 @@ i.multiselect__tag-icon:hover{
 }*/
 
 
-span {
-    font-size: small;
-}
 
 .ss-main {
     background-color: white;
@@ -145,7 +147,7 @@ span {
     margin-top: -30px;
     margin-left: 40px;
     //color: #a614fd;
-    color: black;
+    color: white;
     font-size: 12px;
     line-height: 1em;
 }
@@ -175,9 +177,10 @@ h2, h3 {
 
 }
 
-p{
-    font-family: 'Kanit', 'SansSerif';
+p, label{
+    font-family: 'Montserrat', 'SansSerif';
 }
+
 
 .obligatorio{
     color: red;

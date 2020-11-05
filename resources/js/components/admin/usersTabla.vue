@@ -34,7 +34,7 @@ export default {
     },
     methods:{
         async obtenerUsers(){
-            await axios.get('http://localhost:8000/api/usuarios', {
+            await axios.get('https://preinscripcion.buyday.cl/api/usuarios', {
                 headers: {
                     Authorization: 'Bearer' + localStorage.getItem('token')
                 }

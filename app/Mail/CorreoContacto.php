@@ -32,7 +32,7 @@ class CorreoContacto extends Mailable
         /*return $this->subject($this->email_asunto)
             ->view('Email.correoContacto');*/
             //->from($this->mailData['from'], $this->mailData['from']);
-        return $this->markdown('Email.correoContacto')
+        return $this->markdown('Email.CorreoContacto')
             ->with('mailData', $this->mailData);
     }
 }

@@ -40,9 +40,9 @@ Route::group([
 ], function ($router) {
 
     Route::post('register', [AuthController::class, 'register']);
-    Route::get('dashboard', function (){
+    /*Route::get('dashboard', function (){
         return response()->json(['data' => 'testdata']);
-    });
+    });*/
     //Route::post('logout', 'AuthController@logout');
     //Route::post('refresh', 'AuthController@refresh');
     //Route::get('user-profile', 'AuthController@userProfile');

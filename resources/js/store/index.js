@@ -5,29 +5,30 @@ Vue.use(Vuex);
 export default new Vuex.Store({
     state: {
         isLoggedIn: !!localStorage.getItem('token')
-        /*isLoggedIn: !!localStorage.getItem('token'),
-        token: localStorage.getItem('token')*/
+            /*isLoggedIn: !!localStorage.getItem('token'),
+            token: localStorage.getItem('token')*/
     },
     mutations: {
-        loginUser (state) {
+        loginUser(state) {
             state.isLoggedIn = true
         },
-        logoutUser (state) {
+        logoutUser(state) {
             state.isLoggedIn = false
         },
-        /*LoginUser (state, data) {
+        LoginUser(state, data) {
+            console.log('Avispate xD')
             state.isLoggedIn = true;
             let token = data.access_token;
             state.token = token;
             localStorage.setItem('token', token)
         },
-        LogoutUser (state) {
+        LogoutUser(state) {
             state.isLoggedIn = false;
             state.token = localStorage.removeItem('token')
         },
-        tokenStored (state) {
+        tokenStored(state) {
             state.token = localStorage.getItem('token')
-        }*/
+        }
     },
     actions: {},
     modules: {}

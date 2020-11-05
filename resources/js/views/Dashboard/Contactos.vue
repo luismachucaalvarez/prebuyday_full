@@ -71,7 +71,7 @@ export default {
     /*
     methods:{
         cargarDatos(){
-            axios.get('http://localhost:8000/api/contactos')
+            axios.get('https://preinscripcion.buyday.cl/api/contactos')
             .then((response) => {
                 console.log(response.data.contactos)
                 this.tableData = response.data.contactos
@@ -83,7 +83,7 @@ export default {
     }*/
     /*mounted() {
         axios
-            .get('http://localhost:8000/api/contactos')
+            .get('https://preinscripcion.buyday.cl/api/contactos')
         .then(response =>{
             //console.log(response.data)
             this.data = response.data

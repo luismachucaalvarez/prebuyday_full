@@ -30,7 +30,7 @@ class CorreoContactoSinIniciacion extends Mailable
     public function build()
     {
         //return $this->view('view.name');
-        return $this->markdown('Email.correoContactoSinIniciacion')
+        return $this->markdown('Email.CorreoContactoSinIniciacion')->subject('Buyday.cl - Bienvenido nuevo vendedor :D')
             ->with('mailData', $this->mailData);
     }
 }

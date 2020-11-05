@@ -20,6 +20,7 @@ class CreateContactosTable extends Migration
             $table->string('email');
             $table->string('nombre_fantasia_comercio')->nullable();
             $table->boolean('iniciacion_realizada');
+            $table->string('url_ficha');
             $table->date('fecha_alta');
             $table->timestamps();
         });

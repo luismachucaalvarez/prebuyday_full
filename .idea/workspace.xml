@@ -1,7 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="52e5ca3d-1fb7-414a-85ab-d764ba28b5d2" name="Default Changelist" comment="" />
+    <list default="true" id="52e5ca3d-1fb7-414a-85ab-d764ba28b5d2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/bootstrap/bootstrap.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/D.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/img/img_hero.xcf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/img/img_hero2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ContactoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ContactoController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CorreoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CorreoController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Mail/CorreoContacto.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Mail/CorreoContacto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Mail/CorreoContactoConIniciacion.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Mail/CorreoContactoConIniciacion.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Mail/CorreoContactoSinIniciacion.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Mail/CorreoContactoSinIniciacion.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Mail/CorreoNotificacionAdmin.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Mail/CorreoNotificacionAdminConIniciacion.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Mail/CorreoNotificacionAdminSinIniciacion.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_19_023518_create_contactos_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_19_023518_create_contactos_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/0.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/0.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/1.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/1.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/3.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/3.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/4.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/4.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/5.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/5.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/7.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/7.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/img_hero.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/img_hero.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/public.zip" beforeDir="false" afterPath="$PROJECT_DIR$/public/public.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/img/img_hero.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/img/img_hero.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/admin/contactosTabla.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/admin/contactosTabla.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/admin/detalleContacto.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/admin/detalleContacto.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/admin/loginCard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/admin/loginCard.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/admin/usersTabla.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/admin/usersTabla.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/landing/Footer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/landing/Footer.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/landing/FormPreinscripcion.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/landing/FormPreinscripcion.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/landing/QueHacemos.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/landing/QueHacemos.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/store/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/views/Dashboard/Contactos.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/views/Dashboard/Contactos.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/views/Dashboard/Inicio.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/views/Dashboard/Inicio.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Email/CorreoNotificacionAdminConIniciacion.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Email/CorreoNotificacionAdminSinIniciacion.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,6 +67,9 @@
         <option value="Vue Single File Component" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -141,6 +191,7 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1hi2gaOJBvZiGTsD5F9UVHNRoKD" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -148,7 +199,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/img" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/img" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -162,18 +213,19 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\laragon\www\prebuyday\public\img" />
+      <recent name="D:\laragon\www\prebuyday\resources\img" />
+      <recent name="D:\laragon\www\prebuyday\public" />
+      <recent name="D:\laragon\www\prebuyday\resources" />
+      <recent name="D:\laragon\www\prebuyday\database\migrations" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\laragon\www\prebuyday\resources\img" />
       <recent name="D:\laragon\www\prebuyday\resources\js\components\admin\fieldsDef" />
       <recent name="D:\laragon\www\prebuyday\resources\js\views\Dashboard" />
       <recent name="D:\laragon\www\prebuyday\resources\js\components\shared" />
       <recent name="D:\laragon\www\prebuyday\resources\js\components" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\laragon\www\prebuyday\resources\img" />
-      <recent name="D:\laragon\www\prebuyday\public" />
-      <recent name="D:\laragon\www\prebuyday\resources" />
-      <recent name="D:\laragon\www\prebuyday\database\migrations" />
     </key>
   </component>
   <component name="RunManager">
@@ -218,6 +270,10 @@
       <workItem from="1603411631160" duration="23863000" />
       <workItem from="1603502638150" duration="41353000" />
       <workItem from="1603735912553" duration="33141000" />
+      <workItem from="1603905102920" duration="6313000" />
+      <workItem from="1604186196750" duration="48000" />
+      <workItem from="1604364233197" duration="70000" />
+      <workItem from="1604529179641" duration="13933000" />
     </task>
     <servers />
   </component>
@@ -297,10 +353,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="184" y="9" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1600905932662" />
-    <state x="390" y="97" width="759" height="534" key="find.popup" timestamp="1603827740524">
+    <state x="390" y="97" width="759" height="592" key="find.popup" timestamp="1603907179491">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="390" y="97" width="759" height="534" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1603827740524" />
+    <state x="390" y="97" width="759" height="592" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1603907179491" />
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1603229759788">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

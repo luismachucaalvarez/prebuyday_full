@@ -1,14 +1,14 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Mail\CorreoNotificacionAdminConIniciacion;
-use App\Mail\CorreoNotificacionAdminSinIniciacion;
+use App\Mail\NotificacionNuevoVendedor;
 use Illuminate\Http\Request;
-
+use App\Models\Contacto;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\CorreoContactoConIniciacion;
 use App\Mail\CorreoContactoSinIniciacion;
 use Symfony\Component\HttpFoundation\Response;
+use Illuminate\Support\Facades\DB;
 
 class CorreoController extends Controller
 {
@@ -19,6 +19,11 @@ class CorreoController extends Controller
         if (!empty($request->input('nombre_fantasia_comercio'))){
             $switchNombreFantasiaComercio = 1;
         }
+
+        //$url_ficha = DB::table('contactos')->latest('id')->select('url_ficha')->first();
+        $id_contacto = Contacto::all()->last()->id;
+        $url_ficha = 'https://preinscripcion.buyday.cl/dashboard/contactos/'.$id_contacto;
+        
 
 
         if ($request->get('email')){
@@ -68,7 +73,7 @@ class CorreoController extends Controller
 
                 }
                 Mail::to($mailData['email_contacto'])->send(new CorreoContactoConIniciacion($mailData));
-                Mail::to('luis.machuca@buyday.cl')->send(new CorreoNotificacionAdminConIniciacion($mailData));
+                //Mail::to('luis.machuca@buyday.cl')->send(new CorreoNotificacionAdminConIniciacion($mailData));
 
             }else{
                 $request->validate([
@@ -98,14 +103,23 @@ class CorreoController extends Controller
                         'email_contacto' => $request->get('email'),
                         'telefono_contacto' => $request->get('telefono'),
                         'nombre_fantasia_comercio' => 'No posee',
-                        'iniciacion' => 'No'
+                        'iniciacion' => 'No',
+                        'url_ficha' => $url_ficha
+                        //'url_path' => DB::table('contactos')->latest('created_at')->select('url_ficha')->first()
                         //'iniciacion' => $request->get('iniciacion_realizada'),
                     ];
                 }
                 //Mail::to('luis.machuca@buyday.cl')->send(new CorreoContactoSinIniciacion($mailData));
-                Mail::to($mailData['email_contacto'])->send(new CorreoContactoSinIniciacion($mailData));
-                Mail::to('luis.machuca@buyday.cl')->send(new CorreoNotificacionAdminSinIniciacion($mailData));
+                //Mail::to($mailData['email_contacto'])->send(new CorreoContactoSinIniciacion($mailData));
+                //Mail::to('luis.machuca@buyday.cl')->send(new CorreoNotificacionAdminSinIniciacion($mailData));
+                /*Mail::raw('Esto es una prueba', function ($message){
+                    $message->to('luis.machuca@buyday.cl');
+                });*/
             }
+            //Mail::to('notificacionnuevovendedor@preinscripcion.buyday.cl')->send(new NotificacionNuevoVendedor($mailData));
+            return response()->json([
+                'url_ficha' => $url_ficha
+            ]);
 
 
         }

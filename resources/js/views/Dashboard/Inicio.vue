@@ -21,7 +21,7 @@ export default {
     },
 
     mounted() {
-        axios.get('http://localhost:8000/api/dashboard', {
+        axios.get('https://preinscripcion.buyday.cl/api/dashboard', {
             headers:{
                 Authorization: 'Bearer' + localStorage.getItem('token')
             }
